@@ -23,7 +23,12 @@ $(document).ready(function(){
 								<a target="_blank" class="btn btn-primary btn-block" href="${user.html_url}"> View Profile</a>
 						</div>
 						<div class="col_md-9">
-
+							<span class="label label-default">Public repos: ${user.public_repos}</span>
+							<span class="label label-primary">Public gists: ${user.public_gists}</span>
+							<span class="label label-success">Followers: ${user.followers}</span>
+							<span class="label label-info">Following: ${user.following}</span>
+							<br><br>
+							
 						</div>
 					</div>
 				</div>

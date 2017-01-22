@@ -11,6 +11,32 @@ $(document).ready(function(){
 			}
 
 		}).done(function(user){
+			$.ajax({
+				url:'https://api.github.com/users/' + userName + '/repos',
+				data:{
+					client_id:'1df8bb3f148d51fc631e',
+					client_secret:'b5c867d1368528e052ab91ba688fc43195d015e9',
+					sort: 'created: asc',
+					per_page: 5
+				}
+			}).done(function(repos){
+				$.each(repos, function(index, repo){
+					$('#repos').append(`
+							<div class="well">
+								<div class="row">
+									<div class="col-md-7">
+										<strong>${repo.name}</strong>
+									</div>
+									<div class="col-md-3">
+
+									</div>
+									<div class="col-md-2">
+
+									</div>
+							</div>
+						`)
+				})
+			});
 			$('#profile').html(`
 			<div class="panel panel-default">
 				<div class="panel-heading">
